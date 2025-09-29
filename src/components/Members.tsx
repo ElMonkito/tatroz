@@ -9,60 +9,44 @@ const Members: React.FC = () => {
       joinDate: '2018',
     },
     {
-      name: 'Thomas Dubois',
+      name: 'Titouan Emonet',
       role: 'Vice-Président',
       joinDate: '2019',
     },
     {
-      name: 'Emma Laurent',
-      role: 'Secrétaire Générale',
+      name: 'Sara Carrasco',
+      role: 'Secrétaire',
       joinDate: '2020',
     },
     {
-      name: 'Lucas Moreau',
-      role: 'Trésorier',
-      joinDate: '2021',
+      name: 'Valentin Roth',
+      role: 'Caissier',
+      joinDate: '2024',
     },
     {
-      name: 'Chloé Bernard',
+      name: 'Amelie Bonnet',
       role: 'Responsable Événements',
       joinDate: '2022',
     },
     {
-      name: 'Alexandre Petit',
-      role: 'Responsable Environnement',
+      name: 'Maéline Emonet',
+      role: 'Responsable Réseaux',
       joinDate: '2021',
+    },
+    {
+      name: 'Valentin Repond',
+      role: '7eme Membre',
+      joinDate: '2025',
     }
   ];
 
   const memberCategories = [
     {
       title: 'Membres Actifs',
-      count: 45,
+      count: 30,
       description: 'Participants réguliers aux activités et projets',
       icon: Users,
       color: 'bg-tatroz-green'
-    },
-    {
-      title: 'Membres Bénévoles',
-      count: 35,
-      description: 'Contributeurs occasionnels selon leur disponibilité',
-      icon: Heart,
-      color: 'bg-green-600'
-    },
-    {
-      title: 'Membres Bureau',
-      count: 8,
-      description: 'Responsables de la gestion et coordination',
-      icon: Award,
-      color: 'bg-orange-500'
-    },
-    {
-      title: 'Membres Partenaires',
-      count: 32,
-      description: 'Soutien et collaboration avec autres organisations',
-      icon: Calendar,
-      color: 'bg-purple-500'
     }
   ];
 
@@ -81,36 +65,40 @@ const Members: React.FC = () => {
         </div>
       </section>
 
-      {/* Member Statistics */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Notre Communauté
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Une diversité de profils unis par la passion de l'engagement citoyen
-          </p>
-        </div>
+{/* Member Statistics */}
+<section className="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-800 mb-4">
+      Notre Communauté
+    </h2>
+    <p className="text-gray-600 max-w-2xl mx-auto">
+      Une diversité de profils unis par la passion de l'engagement citoyen
+    </p>
+  </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {memberCategories.map((category, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-              <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                <category.icon className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-800 mb-2">
-                {category.count}
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                {category.title}
-              </h3>
-              <p className="text-gray-600 text-sm">
-                {category.description}
-              </p>
-            </div>
-          ))}
+  {/* Centrage du bloc unique */}
+  <div className="flex justify-center">
+    {memberCategories.map((category, index) => (
+      <div
+        key={index}
+        className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center max-w-xs"
+      >
+        <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
+          <category.icon className="h-8 w-8 text-white" />
         </div>
-      </section>
+        <div className="text-3xl font-bold text-gray-800 mb-2">
+          {category.count}
+        </div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">
+          {category.title}
+        </h3>
+        <p className="text-gray-600 text-sm">
+          {category.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* Board Members */}
       <section className="bg-gray-50 py-16">
@@ -155,7 +143,7 @@ const Members: React.FC = () => {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-tatroz-green to-green-600 rounded-2xl p-8 md:p-12 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Rejoignez Notre Équipe
+            Rejoignez La Jeunesse
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
             Vous souhaitez contribuer au développement de Tatroz ? 
@@ -164,7 +152,7 @@ const Members: React.FC = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
             <div className="bg-white bg-opacity-10 rounded-lg p-6">
-              <h3 className="font-semibold mb-3">Devenir Membre Actif</h3>
+              <h3 className="font-semibold mb-3">Devenir Membre</h3>
               <ul className="text-left space-y-2 text-blue-100">
                 <li>• Participation aux réunions mensuelles</li>
                 <li>• Contribution aux projets en cours</li>
@@ -172,23 +160,11 @@ const Members: React.FC = () => {
                 <li>• Réseau de jeunes engagés</li>
               </ul>
             </div>
-            <div className="bg-white bg-opacity-10 rounded-lg p-6">
-              <h3 className="font-semibold mb-3">Devenir Bénévole</h3>
-              <ul className="text-left space-y-2 text-green-100">
-                <li>• Aide ponctuelle sur les événements</li>
-                <li>• Participation selon disponibilités</li>
-                <li>• Expérience enrichissante</li>
-                <li>• Impact direct sur la communauté</li>
-              </ul>
-            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-tatroz-green px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Postuler Maintenant
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-tatroz-green transition-colors">
-              En Savoir Plus
+              Rejoindre Maintenant
             </button>
           </div>
         </div>
