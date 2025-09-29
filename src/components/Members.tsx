@@ -4,7 +4,7 @@ import { Mail, Phone, Calendar, Award, Users, Heart } from 'lucide-react';
 const Members: React.FC = () => {
   const boardMembers = [
     {
-      name: 'Sarah Martinez',
+      name: 'Noémie Savoy',
       role: 'Présidente',
       description: 'Étudiante en sociologie, passionnée par le développement communautaire.',
       email: 'sarah.martinez@jeunesse-tatroz.org',
