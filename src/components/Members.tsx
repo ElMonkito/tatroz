@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Users, Heart } from 'lucide-react';
+import { Calendar, Users, Heart, Award } from 'lucide-react';
 
 const Members: React.FC = () => {
   const boardMembers = [
