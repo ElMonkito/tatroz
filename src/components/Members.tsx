@@ -1,61 +1,37 @@
 import React from 'react';
-import { Mail, Phone, Calendar, Award, Users, Heart } from 'lucide-react';
+import { Calendar, Users, Heart } from 'lucide-react';
 
 const Members: React.FC = () => {
   const boardMembers = [
     {
       name: 'Noémie Savoy',
       role: 'Présidente',
-      description: 'Étudiante en sociologie, passionnée par le développement communautaire.',
-      email: 'sarah.martinez@jeunesse-tatroz.org',
-      phone: '+33 6 12 34 56 78',
       joinDate: '2018',
-      achievements: ['Festival Culturel 2024', 'Projet Écologique Municipal']
     },
     {
       name: 'Thomas Dubois',
       role: 'Vice-Président',
-      description: 'Ingénieur informatique, responsable de la digitalisation de nos actions.',
-      email: 'thomas.dubois@jeunesse-tatroz.org',
-      phone: '+33 6 23 45 67 89',
       joinDate: '2019',
-      achievements: ['Plateforme Digitale', 'Événements Virtuels COVID']
     },
     {
       name: 'Emma Laurent',
       role: 'Secrétaire Générale',
-      description: 'Étudiante en communication, coordonne nos projets et partenariats.',
-      email: 'emma.laurent@jeunesse-tatroz.org',
-      phone: '+33 6 34 56 78 90',
       joinDate: '2020',
-      achievements: ['Partenariats Régionaux', 'Communication Moderne']
     },
     {
       name: 'Lucas Moreau',
       role: 'Trésorier',
-      description: 'Étudiant en gestion, gère les finances et les subventions.',
-      email: 'lucas.moreau@jeunesse-tatroz.org',
-      phone: '+33 6 45 67 89 01',
       joinDate: '2021',
-      achievements: ['Optimisation Budget', 'Nouvelles Subventions']
     },
     {
       name: 'Chloé Bernard',
       role: 'Responsable Événements',
-      description: 'Organisatrice d\'événements, créatrice d\'expériences mémorables.',
-      email: 'chloe.bernard@jeunesse-tatroz.org',
-      phone: '+33 6 56 78 90 12',
       joinDate: '2022',
-      achievements: ['Gala Annuel', 'Tournois Sportifs']
     },
     {
       name: 'Alexandre Petit',
       role: 'Responsable Environnement',
-      description: 'Militant écologiste, pilote nos actions environnementales.',
-      email: 'alexandre.petit@jeunesse-tatroz.org',
-      phone: '+33 6 67 89 01 23',
       joinDate: '2021',
-      achievements: ['Opération Reboisement', 'Tri Sélectif Communal']
     }
   ];
 
@@ -162,42 +138,10 @@ const Members: React.FC = () => {
 
                 {/* Profile Content */}
                 <div className="p-6">
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {member.description}
-                  </p>
-
-                  {/* Contact Info */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Mail className="h-4 w-4 mr-2" />
-                      <a href={`mailto:${member.email}`} className="hover:text-tatroz-green transition-colors">
-                        {member.email}
-                      </a>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Phone className="h-4 w-4 mr-2" />
-                      <a href={`tel:${member.phone}`} className="hover:text-tatroz-green transition-colors">
-                        {member.phone}
-                      </a>
-                    </div>
+                  <div className="text-center">
                     <div className="flex items-center text-sm text-gray-500">
                       <Calendar className="h-4 w-4 mr-2" />
                       Membre depuis {member.joinDate}
-                    </div>
-                  </div>
-
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2 flex items-center">
-                      <Award className="h-4 w-4 mr-1" />
-                      Réalisations Clés
-                    </h4>
-                    <div className="space-y-1">
-                      {member.achievements.map((achievement, achIndex) => (
-                        <span key={achIndex} className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-2 mb-1">
-                          {achievement}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </div>
